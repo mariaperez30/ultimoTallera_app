@@ -1,0 +1,7 @@
+{
+  "name": "app_ultimoTaller",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
