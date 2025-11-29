@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-auth-header',
   templateUrl: './auth-header.component.html',
   styleUrls: ['./auth-header.component.scss'],
+  standalone:false
 })
 export class AuthHeaderComponent  implements OnInit {
 
