@@ -1,26 +1,38 @@
 <!DOCTYPE html>
 <html>
-  <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
-  <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"></script>
-  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"></script>
+  </head>
   <body style="margin: 0px; overflow: hidden;">
     <a-scene embedded arjs>
+      <a-assets>
+        <!-- Cargar patrón 'pattern-BURRO.patt' y las imágenes -->
+        <a-asset-item id="patternBurro" src="./pattern/pattern-BURRO.patt"></a-asset-item>
+        <img id="chicaImg" src="./chica.jpg" alt="chica">
+        <img id="gatitoImg" src="./gatito.jpg" alt="gatito">
+        <img id="ianImg" src="./ian.jpg" alt="ian">
+      </a-assets>
+
       <a-marker preset="hiro">
-        <a-image src="chica.jpg" rotation="-90 0 0" width="1.5" height="2"></a-image>
-      </a-marker> 
-      <a-marker preset="kanji">
-        <a-image src="gatito.jpg" rotation="-90 0 0" width="1.5" height="2"></a-image>
+        <a-image src="#chicaImg" rotation="-90 0 0" width="1.5" height="2"></a-image>
       </a-marker>
-   
-      <a-marker  url="pattern/2.patt">
-        <a-image src="ian.jpg" rotation="-90 0 0" width="1.5" height="2"></a-image>
-      </a-marker> 
+
+      <a-marker preset="kanji">
+        <a-image src="#gatitoImg" rotation="-90 0 0" width="1.5" height="2"></a-image>
+      </a-marker>
+
+      <!-- Marcador objetivo: pattern-BURRO -->
+      <a-marker url="#patternBurro">
+        <a-image src="#ianImg" rotation="-90 0 0" width="1.5" height="2"></a-image>
+      </a-marker>
 
       <a-entity camera></a-entity>
     </a-scene>
   </body>
-</html> 
-
+</html>
    
 
 
